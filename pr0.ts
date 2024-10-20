@@ -20,20 +20,18 @@ if (fs.existsSync(envPath)) {
         const db = client.db(process.env.MONGODB_DB);
 
         let s = await db.collection("students")
+        const query = {
+            "exam": {$not: {$elemMatch: {name:"math", score:{$gt:70},}}}
+        };
 
+        let r = await s.find(query).project({violations:{$slice:2}}).toArray()
 
-        let result = await s.updateOne({ name: "Velasquez Bernard" }, {
-            $pop: {
-                violations: 1 //1 => from last, -1 => from first
-            } as any
-        })
-        console.log(result)
-
+        console.log(r.map(item=> item.violations))
 
         process.exit()
 
     } catch (e) {
-        console.log("Something is wrong:", e)
+        console.log(e)
     }
 })()
 

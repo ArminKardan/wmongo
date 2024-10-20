@@ -21,12 +21,12 @@ if (fs.existsSync(envPath)) {
 
         let s = await db.collection("students")
 
-        let result = await s.updateOne({name:"Velasquez Bernard"},{
-            $inc:{
-                height:3
-            }
-        })
-        console.log(result)
+        // let result = await s.updateOne({name:"Velasquez Bernard"},{
+        //     $inc:{
+        //         height:3
+        //     }
+        // })
+        // console.log(result)
 
 
         // let result = await s.updateOne({name:"Velasquez Bernard"},{
@@ -55,7 +55,7 @@ if (fs.existsSync(envPath)) {
 
         // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
         //     $max: {
-        //         height: 160 //update smaller than 150 to 150
+        //         height: 160 //update smaller than 160 to 160
         //     }
         // })
         // console.log(result)

@@ -22,12 +22,12 @@ if (fs.existsSync(envPath)) {
         let s = await db.collection("students")
 
 
-        let result = await s.updateOne({ name: "Velasquez Bernard" }, {
-            $pull: {
-                violations: { myfield: "test" }
-            } as any
-        })
-        console.log(result)
+        // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
+        //     $pull: {
+        //         violations: { myfield: "test" }
+        //     } as any
+        // })
+        // console.log(result)
 
 
 

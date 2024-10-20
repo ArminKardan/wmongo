@@ -23,14 +23,14 @@ if (fs.existsSync(envPath)) {
 
 
 
-        let result = await s.updateOne({ name: "Velasquez Bernard" }, {
-            $push: {
-                violations: {
-                    myfield2: "test2"
-                }
-            } as any
-        })
-        console.log(result)
+        // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
+        //     $push: {
+        //         violations: {
+        //             myfield2: "test2"
+        //         }
+        //     } as any
+        // })
+        // console.log(result)
 
 
         // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
@@ -43,12 +43,12 @@ if (fs.existsSync(envPath)) {
         // console.log(result)
 
 
-        // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
-        //     $set: {
-        //         violations: [1,2,3,4,5]
-        //     } as any
-        // })
-        // console.log(result)
+        let result = await s.updateOne({ name: "Velasquez Bernard" }, {
+            $set: {
+                violations: [1,2,3,4,5]
+            } as any
+        })
+        console.log(result)
 
 
         // let result = await s.updateOne({ name: "Velasquez Bernard" }, {

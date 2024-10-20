@@ -37,12 +37,16 @@ if (fs.existsSync(envPath)) {
         // console.log(result)
 
 
-        let result = await s.updateOne({name:"Velasquez Bernard"},{
-            $set:{
-                "a.b":"c"
-            }
-        })
-        console.log(result)
+        // let a = {
+        //     b:"c"
+        // }
+
+        // let result = await s.updateOne({name:"Velasquez Bernard"},{
+        //     $set:{
+        //         "a.b":"c"
+        //     }
+        // })
+        // console.log(result)
 
         // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
         //     $set: {
@@ -60,12 +64,12 @@ if (fs.existsSync(envPath)) {
         // console.log(result)
 
 
-        // let result = await s.updateOne({name:"Velasquez Bernard"},{
-        //     $unset:{
-        //         mykey:true
-        //     }
-        // })
-        // console.log(result)
+        let result = await s.updateOne({name:"Velasquez Bernard"},{
+            $unset:{
+                mykey:true
+            }
+        })
+        console.log(result)
 
         process.exit()
 

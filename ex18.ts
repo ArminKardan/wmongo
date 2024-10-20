@@ -21,17 +21,17 @@ if (fs.existsSync(envPath)) {
 
         let s = await db.collection("students")
 
-        let result = await s.updateOne({name:"Velasquez Bernard"},{
-            $push:{
-                violations: {$each:[1,10,15,30]}
-            } as any
-        })
-        console.log(result)
+        // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
+        //     $push: {
+        //         violations: { $each: [1, 10, 15, 30] }
+        //     } as any
+        // })
+        // console.log(result)
 
 
         // let result = await s.updateOne({ name: "Velasquez Bernard" }, {
         //     $addToSet: {
-        //         violations: { $each: [1, 1, 1, 1, 10, 15, 30] }
+        //         violations: { $each: [1, 1, 1, 1, 10, 15, 30, 90] }
         //     } as any
         // })
         // console.log(result)
@@ -51,7 +51,7 @@ if (fs.existsSync(envPath)) {
         //     } as any
         // })
         // console.log(semanticerr)
-        
+
 
 
         // let error = await s.updateOne({name:"Velasquez Bernard"},{

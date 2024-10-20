@@ -22,11 +22,11 @@ if (fs.existsSync(envPath)) {
         let s = await db.collection("students")
 
         // let shorts = await s.find({height:{$lte:170}}).sort({height:1}).toArray()
-        // console.log(shorts)
+        // console.log(shorts.length)
         
         // console.log(shorts.map(item=> item.height))
 
-        // let shorts_abs = await s.find({height:{$lte:170}}).sort({height:1}).project({height:1}).toArray()
+        // let shorts_abs = await s.find({height:{$lte:170}}).sort({height:1}).project({height:1,}).toArray()
         // console.log(shorts_abs)
 
 
@@ -42,7 +42,7 @@ if (fs.existsSync(envPath)) {
         // console.log(shorts_abs_noid.slice(0, 5))
 
 
-        // let shorts_abs_noid_limit = await s.find({height:{$lte:170}}).sort({height:1}).project({height:1, _id:0}).limit(5).toArray()
+        // let shorts_abs_noid_limit = await s.find({height:{$lte:170}}).sort({height:-1}).project({height:1, _id:0}).limit(5).toArray()
         // console.log(shorts_abs_noid_limit)
 
         

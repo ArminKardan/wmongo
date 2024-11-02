@@ -12,14 +12,14 @@ if (fs.existsSync(envPath)) {
 
 (async () => {
 
-    const client = new MongoClient(process.env.MONGOURL);
+    // const client = new MongoClient(process.env.MONGOURL);
 
-    try {
-        await client.connect();
-        console.log('Connected to the MongoDB server');
-        const db = client.db(process.env.MONGODB_DB);
+    // try {
+        // await client.connect();
+        // console.log('Connected to the MongoDB server');
+        // const db = client.db(process.env.MONGODB_DB);
 
-        let s = await db.collection("students")
+        // let s = await db.collection("students")
 
         // let students = await s.find({}).project({ height: 1, _id: 0 }).toArray()
 
@@ -79,37 +79,34 @@ if (fs.existsSync(envPath)) {
 
 
 
-        let students = await s.find({}).project({ exam: 1 }).toArray()
+    //     let students = await s.find({}).project({ exam: 1 }).toArray()
 
 
-        let maths = students.map(st => {
-            let math = st.exam.filter(ex => ex.name == "math" && !isNaN(ex.score))
-            if(math.length > 0)
-            {
-                let num = math[0].score
-                return num
-            }
-            else
-            {
-                return null
-            }
+    //     let maths = students.map(st => {
+    //         let math = st.exam.filter(ex => ex.name == "math" && !isNaN(ex.score))
+    //         if(math.length > 0)
+    //         {
+    //             let num = math[0].score
+    //             return num
+    //         }
+    //         else
+    //         {
+    //             return null
+    //         }
             
-        }).filter(num=> num != null)
+    //     }).filter(num=> num != null)
 
 
-        // let u = [1,5,71, 82, null, 65, 84, 15]
-        // let u = [1,5,71, 82, 65, 84, 15]
+    //     // let u = [1,5,71, 82, null, 65, 84, 15]
+    //     // let u = [1,5,71, 82, 65, 84, 15]
 
 
-        let sum = 0;
-        for (let num of maths) {
-            sum += num
-        }
+    //     let sum = 0;
+    //     for (let num of maths) {
+    //         sum += num
+    //     }
 
-        console.log(sum / maths.length)
-
-
-
+    //     console.log(sum / maths.length)
 
 
 
@@ -118,12 +115,15 @@ if (fs.existsSync(envPath)) {
 
 
 
-        // console.log(heights)
-        process.exit()
 
-    } catch (e) {
-        console.log("Something is wrong:", e)
-    }
+
+
+    //     // console.log(heights)
+    //     process.exit()
+
+    // } catch (e) {
+    //     console.log("Something is wrong:", e)
+    // }
 })()
 
 
